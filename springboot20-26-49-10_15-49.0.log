@@ -1,0 +1,73 @@
+15:49:07.859 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+15:49:07.863 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+15:49:31.210 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[.[localhost].[/] -- Initializing Spring DispatcherServlet 'dispatcherServlet' 
+15:49:31.214 [http-nio-8080-exec-1] INFO  o.s.w.servlet.DispatcherServlet -- Initializing Servlet 'dispatcherServlet' 
+15:49:31.215 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Detected StandardServletMultipartResolver 
+15:49:31.215 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Detected AcceptHeaderLocaleResolver 
+15:49:31.217 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Detected FixedThemeResolver 
+15:49:31.225 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@3ce2c5f6 
+15:49:31.227 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Detected org.springframework.web.servlet.support.SessionFlashMapManager@70cdbd18 
+15:49:31.232 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data 
+15:49:31.239 [http-nio-8080-exec-1] INFO  o.s.w.servlet.DispatcherServlet -- Completed initialization in 24 ms 
+15:49:31.259 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- GET "/get-bike", parameters={} 
+15:49:31.295 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping -- Mapped to com.ducat.springboot20.Controller.BikeController#getBikeController() 
+15:49:31.303 [http-nio-8080-exec-1] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Opening JPA EntityManager in OpenEntityManagerInViewInterceptor 
+15:49:31.391 [http-nio-8080-exec-1] DEBUG o.h.s.i.StatisticsInitiator -- Statistics initialized [enabled=false] 
+15:49:31.561 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Found thread-bound EntityManager [SessionImpl(191922469<open>)] for JPA transaction 
+15:49:31.578 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly 
+15:49:31.589 [http-nio-8080-exec-1] DEBUG o.s.j.datasource.DataSourceUtils -- Setting JDBC Connection [HikariProxyConnection@346864734 wrapping com.mysql.cj.jdbc.ConnectionImpl@3ea84e01] read-only 
+15:49:31.600 [http-nio-8080-exec-1] DEBUG o.h.e.t.internal.TransactionImpl -- On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false 
+15:49:31.609 [http-nio-8080-exec-1] DEBUG o.h.e.t.internal.TransactionImpl -- begin 
+15:49:31.613 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@3e9ee22c] 
+15:49:31.929 [http-nio-8080-exec-1] DEBUG o.hibernate.orm.sql.ast.create -- Created new SQL alias : b1_0 
+15:49:31.938 [http-nio-8080-exec-1] DEBUG o.hibernate.orm.sql.ast.create -- Registration of TableGroup [StandardTableGroup(com.ducat.springboot20.Entity.Bike(1))] with identifierForTableGroup [com.ducat.springboot20.Entity.Bike] for NavigablePath [com.ducat.springboot20.Entity.Bike]  
+15:49:31.957 [http-nio-8080-exec-1] DEBUG o.hibernate.orm.sql.ast.create -- Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@63820a00] with identifierForTableGroup [com.ducat.springboot20.Entity.Bike(1).owner] for NavigablePath [com.ducat.springboot20.Entity.Bike(1).owner]  
+15:49:31.963 [http-nio-8080-exec-1] DEBUG o.h.orm.results.graph.AST -- DomainResult Graph:
+ \-EntityResultImpl [com.ducat.springboot20.Entity.Bike(1)]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(1).bikeModel]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(1).bikeName]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(1).color]
+ |  +-EntityFetchSelectImpl [com.ducat.springboot20.Entity.Bike(1).owner]
+ |  \-BasicFetch [com.ducat.springboot20.Entity.Bike(1).price]
+ 
+15:49:31.964 [http-nio-8080-exec-1] DEBUG org.hibernate.orm.sql.ast.tree -- SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (b1 : com.ducat.springboot20.Entity.Bike(1)) {
+          primaryTableReference : bike as b1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (o1 : com.ducat.springboot20.Entity.Bike(1).owner) {
+            }
+          }
+        }
+      }
+    }
+ 
+15:49:31.990 [http-nio-8080-exec-1] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL 
+15:49:31.997 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL -- select b1_0.id,b1_0.bike_model,b1_0.bike_name,b1_0.color,b1_0.owner_id,b1_0.price from bike b1_0 
+15:49:32.054 [http-nio-8080-exec-1] DEBUG org.hibernate.orm.results -- Initializer list:
+	  com.ducat.springboot20.Entity.Bike(1) -> EntityJoinedFetchInitializer(com.ducat.springboot20.Entity.Bike(1))@842151492 (SingleTableEntityPersister(com.ducat.springboot20.Entity.Bike))
+	  com.ducat.springboot20.Entity.Bike(1).owner -> EntitySelectFetchInitializer(com.ducat.springboot20.Entity.Bike(1).owner)@394778935 (ToOneAttributeMapping(NavigableRole[com.ducat.springboot20.Entity.Bike.owner])@1947712217)
+ 
+15:49:32.094 [http-nio-8080-exec-1] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE 
+15:49:32.095 [http-nio-8080-exec-1] DEBUG org.hibernate.SQL -- select o1_0.owner_id,o1_0.owner_name,o1_0.age from owner o1_0 where o1_0.owner_id=? 
+15:49:32.115 [http-nio-8080-exec-1] DEBUG org.hibernate.orm.results -- Initializer list:
+	  com.ducat.springboot20.Entity.Owner -> EntityJoinedFetchInitializer(com.ducat.springboot20.Entity.Owner)@16693170 (SingleTableEntityPersister(com.ducat.springboot20.Entity.Owner))
+ 
+15:49:32.124 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Initiating transaction commit 
+15:49:32.125 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Committing JPA transaction on EntityManager [SessionImpl(191922469<open>)] 
+15:49:32.125 [http-nio-8080-exec-1] DEBUG o.h.e.t.internal.TransactionImpl -- committing 
+15:49:32.130 [http-nio-8080-exec-1] DEBUG o.s.j.datasource.DataSourceUtils -- Resetting read-only flag of JDBC Connection [HikariProxyConnection@346864734 wrapping com.mysql.cj.jdbc.ConnectionImpl@3ea84e01] 
+15:49:32.131 [http-nio-8080-exec-1] DEBUG o.s.o.jpa.JpaTransactionManager -- Not closing pre-bound JPA EntityManager after transaction 
+15:49:32.162 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Using 'application/json', given [*/*] and supported [application/json, application/*+json] 
+15:49:32.165 [http-nio-8080-exec-1] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Writing [[com.ducat.springboot20.Entity.Bike@5c7e5cc1, com.ducat.springboot20.Entity.Bike@7574529e]] 
+15:49:32.252 [http-nio-8080-exec-1] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Closing JPA EntityManager in OpenEntityManagerInViewInterceptor 
+15:49:32.260 [http-nio-8080-exec-1] DEBUG o.s.w.servlet.DispatcherServlet -- Completed 200 OK 
+15:49:37.881 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+15:49:37.922 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+15:49:49.415 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@4fc7d2c0 is alive 
+15:49:51.896 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@4b8969ae is alive 
+15:49:53.046 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@1947f517 is alive 
+15:49:54.122 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@3facfe16 is alive 
+15:49:55.954 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@6467b1a1 is alive 
+15:49:59.753 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@3ea84e01 is alive 
