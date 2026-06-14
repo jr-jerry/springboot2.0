@@ -15,6 +15,7 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Bike {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//automatically id
     private int id;
