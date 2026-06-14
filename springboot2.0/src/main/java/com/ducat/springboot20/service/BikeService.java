@@ -1,9 +1,8 @@
-package com.ducat.springboot20.Service;
+package com.ducat.springboot20.service;
 
 import java.util.*;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.ducat.springboot20.dto.BikeDTO;
 import org.springframework.stereotype.Service;
 
 import com.ducat.springboot20.Entity.Bike;
@@ -24,12 +23,13 @@ public class BikeService {
         this.bikeRepository = bikeRepository;
         this.ownerRepository = ownerRepository;
     }
-    public void addBike(Bike bike,int owner_id){
+    public void addBike(BikeDTO bikeDTO, int ownerId){
         //find the owner by id --> 
-        Optional<Owner> box=ownerRepository.findById(owner_id);//
+        Optional<Owner> box=ownerRepository.findById(ownerId);//
         if(box.isPresent()){
-            Owner saveOwnerObject=box.get();
-            bike.setOwner(saveOwnerObject);
+            Owner savedOwnerObject=box.get();
+            Bike bike=getBikeFromDto(bikeDTO);
+            bike.setOwner(savedOwnerObject);
             bikeRepository.save(bike);
         }
        // throw new Custome excepiton owner not found ! 
@@ -37,7 +37,7 @@ public class BikeService {
       
     }
     public List<Bike> getBikeService(){
-        System.out.println("Bike Service called");
+        log.info("Bike service called");
         return bikeRepository.findAll();
     }
     public boolean deleteBikeService(int bikeId){
@@ -51,16 +51,28 @@ public class BikeService {
           //then delete kr denge ! 
         // not found ! 
     }
-    public boolean updateBikeService(int bike_Id,Bike updatedBikeData){
-       Optional<Bike> box=bikeRepository.findById(bike_Id);
+    public boolean updateBikeService(int bikeId,BikeDTO updatedBikeDTO){
+       Optional<Bike> box=bikeRepository.findById(bikeId);
        if(box.isPresent()){
           Bike oldBikeData=box.get();
-          oldBikeData.setBikeModel(updatedBikeData.getBikeModel());
+          oldBikeData.setBikeModel(updatedBikeDTO.getBikeModel());
+          oldBikeData.setBikeName(updatedBikeDTO.getBikeName());
+          oldBikeData.setColor(updatedBikeDTO.getColor());
+          oldBikeData.setPrice(updatedBikeDTO.getPrice());
           bikeRepository.save(oldBikeData);
           return true;
        }
-       log.debug("No Bike present with this id"+bike_Id);
+       log.debug("No Bike present with this id"+bikeId);
        return false;
+        
+    }
+    public static Bike getBikeFromDto(BikeDTO bikeDTO){
+        return Bike.builder()
+                .bikeName(bikeDTO.getBikeName())
+                .bikeModel(bikeDTO.getBikeModel())
+                .color(bikeDTO.getColor())
+                .price(bikeDTO.getPrice())
+                .build();
         
     }
    

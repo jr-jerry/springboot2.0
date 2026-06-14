@@ -1,5 +1,7 @@
 package com.ducat.springboot20.Controller;
 
+ import com.ducat.springboot20.dto.BikeDTO;
+ import lombok.extern.slf4j.Slf4j;
  import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -9,20 +11,20 @@ import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RestController;
 
 import com.ducat.springboot20.Entity.Bike;
-import com.ducat.springboot20.Service.BikeService;
+import com.ducat.springboot20.service.BikeService;
 import java.util.*;
-
+@Slf4j
 @RestController
 public class BikeController {
-    private BikeService service;
+    private final BikeService service;
 
     public BikeController(BikeService bikeService){
         this.service=bikeService;
     }
-    @PostMapping("/add-bike/owner-id/{owner_id}")
-    public void addBikeController(@RequestBody Bike bike,@PathVariable int owner_id){
-        System.out.println("Data receive in springbooot "+bike);
-        service.addBike(bike,owner_id);
+    @PostMapping("/add-bike/owner-id/{ownerId}")
+    public void addBikeController(@RequestBody BikeDTO bike, @PathVariable int ownerId){
+        log.info("Data receive in springbooot "+bike);
+        service.addBike(bike,ownerId);
     }
 
     @DeleteMapping("/del-bike/{bikeId}")
@@ -36,11 +38,11 @@ public class BikeController {
 
     @GetMapping("/get-bike")
     public List<Bike> getBikeController(){
-        System.out.println("Bike controller called ! ");
+        log.info("Bike controller called ! ");
         return service.getBikeService();
     }
     @PutMapping("/update-bike/{id}")
-    public Boolean updateBikeController(@PathVariable int id,@RequestBody Bike updateBikeData){
+    public Boolean updateBikeController(@PathVariable int id,@RequestBody BikeDTO updateBikeData){
         return service.updateBikeService(id, updateBikeData);
     }
 }
