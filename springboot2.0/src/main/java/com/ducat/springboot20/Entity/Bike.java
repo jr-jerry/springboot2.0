@@ -6,14 +6,14 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Entity
 @Getter
 @Setter
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Bike {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//automatically id
@@ -23,7 +23,7 @@ public class Bike {
     private String color;
     private double price;
     @ManyToOne
-    @JoinColumn(name="Owner_Id")
+    @JoinColumn(name="ownerId")
     private Owner owner;
     
 }

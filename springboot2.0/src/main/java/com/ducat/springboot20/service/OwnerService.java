@@ -19,7 +19,7 @@ public class OwnerService {
     }
     public static Owner getOwnerFromDto(OwnerDTO ownerDto){
         return Owner.builder()
-                .OwnerName(ownerDto.getOwnerName())
+                .ownerName(ownerDto.getOwnerName())
                 .age(ownerDto.getOwnerAge())
                 .build();
 
