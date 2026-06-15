@@ -1,11 +1,11 @@
 package com.ducat.springboot20.dto;
 
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 @Getter
 @Setter
+@Builder
 public class BikeDTO {
     private String bikeModel;
     private String bikeName;

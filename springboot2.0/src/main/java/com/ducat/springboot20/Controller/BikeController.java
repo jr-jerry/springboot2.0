@@ -22,10 +22,13 @@ public class BikeController {
         this.service=bikeService;
     }
     @PostMapping("/add-bike/owner-id/{ownerId}")
-    public void addBikeController(@RequestBody BikeDTO bike, @PathVariable int ownerId){
-        log.info("Data receive in springbooot "+bike);
-        service.addBike(bike,ownerId);
+    public void addBikeController(@RequestBody BikeDTO bikeDTO, @PathVariable int ownerId){
+        service.addBike(bikeDTO,ownerId);
     }
+//    @PostMapping("/add-bike/owner-id/{ownerId}")
+//    public void addBikeController(@RequestBody Bike bike,@PathVariable int owerId){
+//        service.addBike(bike,ownerId);
+//    }
 
     @DeleteMapping("/del-bike/{bikeId}")
     public String deleteBikeController(@PathVariable int bikeId){

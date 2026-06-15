@@ -27,6 +27,7 @@ public class BikeService {
         //find the owner by id --> 
         Optional<Owner> box=ownerRepository.findById(ownerId);//
         if(box.isPresent()){
+            //saved ownerData
             Owner savedOwnerObject=box.get();
             Bike bike=getBikeFromDto(bikeDTO);
             bike.setOwner(savedOwnerObject);
@@ -67,12 +68,18 @@ public class BikeService {
         
     }
     public static Bike getBikeFromDto(BikeDTO bikeDTO){
-        return Bike.builder()
-                .bikeName(bikeDTO.getBikeName())
-                .bikeModel(bikeDTO.getBikeModel())
-                .color(bikeDTO.getColor())
-                .price(bikeDTO.getPrice())
-                .build();
+//        return Bike.builder()
+//                .bikeName(bikeDTO.getBikeName())
+//                .bikeModel(bikeDTO.getBikeModel())
+//                .color(bikeDTO.getColor())
+//                .price(bikeDTO.getPrice())
+//                .build();
+        Bike obj=new Bike();
+        obj.setBikeModel(bikeDTO.getBikeModel());
+        obj.setBikeName(bikeDTO.getBikeName());
+        obj.setPrice(bikeDTO.getPrice());
+        obj.setColor(bikeDTO.getColor());
+        return obj;
         
     }
    
