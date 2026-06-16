@@ -1,0 +1,39 @@
+13:32:05.354 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@30846934 is alive 
+13:32:05.800 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@462cb7fa is alive 
+13:32:17.554 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+13:32:17.554 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+13:32:21.797 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@74ddb20f is alive 
+13:32:43.718 [SpringApplicationShutdownHook] DEBUG o.s.b.a.ApplicationAvailabilityBean -- Application availability state ReadinessState changed from ACCEPTING_TRAFFIC to REFUSING_TRAFFIC 
+13:32:43.720 [SpringApplicationShutdownHook] DEBUG o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext -- Closing org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext@184497d1, started on Mon Jun 15 11:51:08 IST 2026 
+13:32:43.723 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Stopping beans in phase 2147482623 
+13:32:43.728 [SpringApplicationShutdownHook] INFO  o.s.b.w.e.t.GracefulShutdown -- Commencing graceful shutdown. Waiting for active requests to complete 
+13:32:43.734 [tomcat-shutdown] INFO  o.s.b.w.e.t.GracefulShutdown -- Graceful shutdown complete 
+13:32:43.735 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Stopping beans in phase 2147481599 
+13:32:43.736 [tomcat-shutdown] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Bean 'webServerGracefulShutdown' completed its stop procedure 
+13:32:43.750 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Bean 'webServerStartStop' completed its stop procedure 
+13:32:43.750 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Stopping beans in phase 1073741823 
+13:32:43.750 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Bean 'applicationTaskExecutor' completed its stop procedure 
+13:32:43.750 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Stopping beans in phase -2147483647 
+13:32:43.750 [SpringApplicationShutdownHook] DEBUG o.s.c.s.DefaultLifecycleProcessor -- Bean 'springBootLoggingLifecycle' completed its stop procedure 
+13:32:43.752 [SpringApplicationShutdownHook] DEBUG o.s.j.e.a.AnnotationMBeanExporter -- Unregistering JMX-exposed beans on shutdown 
+13:32:43.753 [SpringApplicationShutdownHook] DEBUG o.s.j.e.a.AnnotationMBeanExporter -- Unregistering JMX-exposed beans 
+13:32:43.754 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean -- Closing JPA EntityManagerFactory for persistence unit 'default' 
+13:32:43.755 [SpringApplicationShutdownHook] DEBUG o.h.internal.SessionFactoryImpl -- HHH000031: Closing 
+13:32:43.756 [SpringApplicationShutdownHook] DEBUG o.h.t.s.TypeConfiguration$Scope -- Un-scoping TypeConfiguration [org.hibernate.type.spi.TypeConfiguration$Scope@2d45792d] from SessionFactory [org.hibernate.internal.SessionFactoryImpl@7f09ff10] 
+13:32:43.756 [SpringApplicationShutdownHook] DEBUG o.h.s.i.AbstractServiceRegistryImpl -- Implicitly destroying ServiceRegistry on de-registration of all child ServiceRegistries 
+13:32:43.761 [SpringApplicationShutdownHook] DEBUG o.h.b.r.i.BootstrapServiceRegistryImpl -- Implicitly destroying Boot-strap registry on de-registration of all child ServiceRegistries 
+13:32:43.762 [SpringApplicationShutdownHook] INFO  c.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown initiated... 
+13:32:43.762 [SpringApplicationShutdownHook] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Before shutdown stats (total=10/10, idle=10/10, active=0, waiting=0) 
+13:32:43.765 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@c13f44d: (connection evicted) 
+13:32:43.767 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@30846934: (connection evicted) 
+13:32:43.767 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@3e7d340e: (connection evicted) 
+13:32:43.768 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@74ddb20f: (connection evicted) 
+13:32:43.769 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@64141507: (connection evicted) 
+13:32:43.769 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@675ee0bf: (connection evicted) 
+13:32:43.770 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@462cb7fa: (connection evicted) 
+13:32:43.770 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@301da929: (connection evicted) 
+13:32:43.771 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@971bc02: (connection evicted) 
+13:32:43.771 [HikariPool-1:connection-closer] DEBUG com.zaxxer.hikari.pool.PoolBase -- HikariPool-1 - Closing connection com.mysql.cj.jdbc.ConnectionImpl@484cb639: (connection evicted) 
+13:32:43.772 [SpringApplicationShutdownHook] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - After  shutdown stats (total=0/10, idle=0/10, active=0, waiting=0) 
+13:32:43.772 [SpringApplicationShutdownHook] INFO  c.zaxxer.hikari.HikariDataSource -- HikariPool-1 - Shutdown completed. 
+13:32:43.772 [SpringApplicationShutdownHook] DEBUG o.s.s.c.ThreadPoolTaskExecutor -- Shutting down ExecutorService 'applicationTaskExecutor' 

@@ -7,5 +7,5 @@ import com.ducat.springboot20.Entity.Bike;
 
 @Repository
 public interface BikeRepository extends JpaRepository<Bike,Integer> {
-
+    public Bike findByBikeName(String name);
 }

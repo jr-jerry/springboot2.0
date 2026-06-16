@@ -17,7 +17,10 @@ public class TestController {
     public TestController(DemoApiService demoApiService){
         this.demoApiService=demoApiService;
     }
-
+    // @PostMapping()
+    // public void postData(@RequestBody String data){
+    //     System.out.println("Data receive in spring boot "+data);
+    // }
     @GetMapping()
     public ResponseEntity<?> getEndpoint(){
        List<ApiResponse> list= demoApiService.getApi();

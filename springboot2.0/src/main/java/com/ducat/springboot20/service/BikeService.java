@@ -18,7 +18,13 @@ public class BikeService {
     
     private final BikeRepository bikeRepository;
     private final OwnerRepository ownerRepository;
-    
+
+    public BikeDTO getBikeByName(String bikeName){
+       Bike savedBike= bikeRepository.findByBikeName(bikeName);
+
+       return getDtoFromBike(savedBike);
+   
+    }
     public BikeService(BikeRepository bikeRepository, OwnerRepository ownerRepository) {
         this.bikeRepository = bikeRepository;
         this.ownerRepository = ownerRepository;
@@ -31,11 +37,9 @@ public class BikeService {
             Owner savedOwnerObject=box.get();
             Bike bike=getBikeFromDto(bikeDTO);
             bike.setOwner(savedOwnerObject);
+
             bikeRepository.save(bike);
-        }
-       // throw new Custome excepiton owner not found ! 
-        // bike k object me owner ko fit karenge then bike object ko save kra denge 
-      
+        }      
     }
     public List<Bike> getBikeService(){
         log.info("Bike service called");
@@ -68,12 +72,7 @@ public class BikeService {
         
     }
     public static Bike getBikeFromDto(BikeDTO bikeDTO){
-//        return Bike.builder()
-//                .bikeName(bikeDTO.getBikeName())
-//                .bikeModel(bikeDTO.getBikeModel())
-//                .color(bikeDTO.getColor())
-//                .price(bikeDTO.getPrice())
-//                .build();
+
         Bike obj=new Bike();
         obj.setBikeModel(bikeDTO.getBikeModel());
         obj.setBikeName(bikeDTO.getBikeName());
@@ -82,5 +81,12 @@ public class BikeService {
         return obj;
         
     }
-   
+    public static BikeDTO getDtoFromBike(Bike bike){
+        BikeDTO emptyObj=new BikeDTO();
+        emptyObj.setBikeModel(bike.getBikeModel());
+        emptyObj.setBikeName(bike.getBikeName());
+        emptyObj.setColor(bike.getColor());
+        emptyObj.setPrice(bike.getPrice());
+        return emptyObj;
+    }
 }

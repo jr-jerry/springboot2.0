@@ -38,7 +38,16 @@ public class BikeController {
             return "Not found ";
         }
     }
+    
+    
+    
+    @GetMapping("/get-bike-by-name/{bikeName}")
+    public BikeDTO getBikeByNameController(@PathVariable String bikeName){
+        return service.getBikeByName(bikeName);
+    }
 
+
+    
     @GetMapping("/get-bike")
     public List<Bike> getBikeController(){
         log.info("Bike controller called ! ");

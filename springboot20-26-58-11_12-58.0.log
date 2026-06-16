@@ -1,0 +1,37 @@
+12:58:04.377 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+12:58:04.384 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+12:58:06.683 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@33a7dee1 is alive 
+12:58:14.771 [http-nio-8080-exec-3] DEBUG o.s.w.servlet.DispatcherServlet -- POST "/save-owner", parameters={} 
+12:58:14.777 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping -- Mapped to com.ducat.springboot20.Controller.OwnerController#saveOwnerController(Owner) 
+12:58:14.778 [http-nio-8080-exec-3] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Opening JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:58:14.886 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Read "application/json;charset=UTF-8" to [com.ducat.springboot20.Entity.Owner@2357a05e] 
+12:58:14.906 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Found thread-bound EntityManager [SessionImpl(560788742<open>)] for JPA transaction 
+12:58:14.910 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT 
+12:58:14.911 [http-nio-8080-exec-3] DEBUG o.h.e.t.internal.TransactionImpl -- On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false 
+12:58:14.912 [http-nio-8080-exec-3] DEBUG o.h.e.t.internal.TransactionImpl -- begin 
+12:58:14.914 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@5d4ed291] 
+12:58:14.914 [http-nio-8080-exec-3] DEBUG o.h.j.i.PersistenceUnitUtilImpl -- jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier 
+12:58:14.933 [http-nio-8080-exec-3] DEBUG o.h.engine.spi.ActionQueue -- Executing identity-insert immediately 
+12:58:14.958 [http-nio-8080-exec-3] DEBUG org.hibernate.SQL -- insert into owner (owner_name,age) values (?,?) 
+12:58:14.992 [http-nio-8080-exec-3] DEBUG org.hibernate.orm.results -- Initializer list is empty 
+12:58:14.994 [http-nio-8080-exec-3] DEBUG o.h.id.IdentifierGeneratorHelper -- Extracted generated values [com.ducat.springboot20.Entity.Owner]: [Ljava.lang.Object;@5b73f4d8 
+12:58:14.998 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Initiating transaction commit 
+12:58:14.998 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Committing JPA transaction on EntityManager [SessionImpl(560788742<open>)] 
+12:58:14.998 [http-nio-8080-exec-3] DEBUG o.h.e.t.internal.TransactionImpl -- committing 
+12:58:15.000 [http-nio-8080-exec-3] DEBUG o.h.e.i.AbstractFlushingEventListener -- Processing flush-time cascades 
+12:58:15.004 [http-nio-8080-exec-3] DEBUG o.h.e.i.AbstractFlushingEventListener -- Dirty checking collections 
+12:58:15.026 [http-nio-8080-exec-3] DEBUG o.h.e.i.AbstractFlushingEventListener -- Flushed: 0 insertions, 0 updates, 0 deletions to 1 objects 
+12:58:15.028 [http-nio-8080-exec-3] DEBUG o.h.e.i.AbstractFlushingEventListener -- Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections 
+12:58:15.030 [http-nio-8080-exec-3] DEBUG o.h.internal.util.EntityPrinter -- Listing entities: 
+12:58:15.031 [http-nio-8080-exec-3] DEBUG o.h.internal.util.EntityPrinter -- com.ducat.springboot20.Entity.Owner{OwnerName=abhishek, owner_id=3, age=19} 
+12:58:15.037 [http-nio-8080-exec-3] DEBUG o.s.o.jpa.JpaTransactionManager -- Not closing pre-bound JPA EntityManager after transaction 
+12:58:15.039 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Using 'application/json', given [*/*] and supported [application/json, application/*+json] 
+12:58:15.039 [http-nio-8080-exec-3] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Writing [com.ducat.springboot20.Entity.Owner@2357a05e] 
+12:58:15.042 [http-nio-8080-exec-3] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Closing JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:58:15.043 [http-nio-8080-exec-3] DEBUG o.s.w.servlet.DispatcherServlet -- Completed 200 OK 
+12:58:27.100 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@37e901f7 is alive 
+12:58:29.330 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@5591c447 is alive 
+12:58:34.399 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+12:58:34.407 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+12:58:45.758 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@7c75b36d is alive 
+12:58:49.205 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@65fc41cf is alive 

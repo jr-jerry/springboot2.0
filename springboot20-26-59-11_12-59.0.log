@@ -1,0 +1,103 @@
+12:59:04.412 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+12:59:04.414 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+12:59:10.705 [http-nio-8080-exec-4] DEBUG o.s.w.servlet.DispatcherServlet -- POST "/add-bike/owner-id/3", parameters={} 
+12:59:10.708 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping -- Mapped to com.ducat.springboot20.Controller.BikeController#addBikeController(Bike, int) 
+12:59:10.711 [http-nio-8080-exec-4] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Opening JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:59:10.722 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Read "application/json;charset=UTF-8" to [com.ducat.springboot20.Entity.Bike@168c9ce1] 
+12:59:10.733 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Found thread-bound EntityManager [SessionImpl(308507695<open>)] for JPA transaction 
+12:59:10.750 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findById]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly 
+12:59:10.751 [http-nio-8080-exec-4] DEBUG o.s.j.datasource.DataSourceUtils -- Setting JDBC Connection [HikariProxyConnection@2080889068 wrapping com.mysql.cj.jdbc.ConnectionImpl@78d6c244] read-only 
+12:59:10.754 [http-nio-8080-exec-4] DEBUG o.h.e.t.internal.TransactionImpl -- On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false 
+12:59:10.755 [http-nio-8080-exec-4] DEBUG o.h.e.t.internal.TransactionImpl -- begin 
+12:59:10.758 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@44099e8f] 
+12:59:10.772 [http-nio-8080-exec-4] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE 
+12:59:10.772 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL -- select o1_0.owner_id,o1_0.owner_name,o1_0.age from owner o1_0 where o1_0.owner_id=? 
+12:59:10.777 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Initiating transaction commit 
+12:59:10.780 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Committing JPA transaction on EntityManager [SessionImpl(308507695<open>)] 
+12:59:10.780 [http-nio-8080-exec-4] DEBUG o.h.e.t.internal.TransactionImpl -- committing 
+12:59:10.782 [http-nio-8080-exec-4] DEBUG o.s.j.datasource.DataSourceUtils -- Resetting read-only flag of JDBC Connection [HikariProxyConnection@2080889068 wrapping com.mysql.cj.jdbc.ConnectionImpl@78d6c244] 
+12:59:10.784 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Not closing pre-bound JPA EntityManager after transaction 
+12:59:10.785 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Found thread-bound EntityManager [SessionImpl(308507695<open>)] for JPA transaction 
+12:59:10.785 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.save]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT 
+12:59:10.785 [http-nio-8080-exec-4] DEBUG o.h.e.t.internal.TransactionImpl -- begin 
+12:59:10.786 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@2a1886e9] 
+12:59:10.787 [http-nio-8080-exec-4] DEBUG o.h.j.i.PersistenceUnitUtilImpl -- jakarta.persistence.PersistenceUnitUtil.getIdentifier is only intended to work with enhanced entities (although Hibernate also adapts this support to its proxies); however the passed entity was not enhanced (nor a proxy).. may not be able to read identifier 
+12:59:10.788 [http-nio-8080-exec-4] DEBUG o.h.engine.spi.ActionQueue -- Executing identity-insert immediately 
+12:59:10.789 [http-nio-8080-exec-4] DEBUG org.hibernate.SQL -- insert into bike (bike_model,bike_name,color,owner_id,price) values (?,?,?,?,?) 
+12:59:10.804 [http-nio-8080-exec-4] DEBUG org.hibernate.orm.results -- Initializer list is empty 
+12:59:10.805 [http-nio-8080-exec-4] DEBUG o.h.id.IdentifierGeneratorHelper -- Extracted generated values [com.ducat.springboot20.Entity.Bike]: [Ljava.lang.Object;@692c729e 
+12:59:10.806 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Initiating transaction commit 
+12:59:10.809 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Committing JPA transaction on EntityManager [SessionImpl(308507695<open>)] 
+12:59:10.810 [http-nio-8080-exec-4] DEBUG o.h.e.t.internal.TransactionImpl -- committing 
+12:59:10.811 [http-nio-8080-exec-4] DEBUG o.h.e.i.AbstractFlushingEventListener -- Processing flush-time cascades 
+12:59:10.811 [http-nio-8080-exec-4] DEBUG o.h.e.i.AbstractFlushingEventListener -- Dirty checking collections 
+12:59:10.812 [http-nio-8080-exec-4] DEBUG o.h.e.i.AbstractFlushingEventListener -- Flushed: 0 insertions, 0 updates, 0 deletions to 2 objects 
+12:59:10.812 [http-nio-8080-exec-4] DEBUG o.h.e.i.AbstractFlushingEventListener -- Flushed: 0 (re)creations, 0 updates, 0 removals to 0 collections 
+12:59:10.813 [http-nio-8080-exec-4] DEBUG o.h.internal.util.EntityPrinter -- Listing entities: 
+12:59:10.813 [http-nio-8080-exec-4] DEBUG o.h.internal.util.EntityPrinter -- com.ducat.springboot20.Entity.Bike{bikeName=PassionPro, owner=com.ducat.springboot20.Entity.Owner#3, color=black, price=14500.0, id=4, bikeModel=HeroBike} 
+12:59:10.814 [http-nio-8080-exec-4] DEBUG o.h.internal.util.EntityPrinter -- com.ducat.springboot20.Entity.Owner{OwnerName=abhishek, owner_id=3, age=19} 
+12:59:10.819 [http-nio-8080-exec-4] DEBUG o.s.o.jpa.JpaTransactionManager -- Not closing pre-bound JPA EntityManager after transaction 
+12:59:10.822 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Using 'application/json', given [*/*] and supported [application/json, application/*+json] 
+12:59:10.822 [http-nio-8080-exec-4] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Nothing to write: null body 
+12:59:10.823 [http-nio-8080-exec-4] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Closing JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:59:10.829 [http-nio-8080-exec-4] DEBUG o.s.w.servlet.DispatcherServlet -- Completed 200 OK 
+12:59:17.285 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@78d6c244 is alive 
+12:59:17.671 [http-nio-8080-exec-5] DEBUG o.s.w.servlet.DispatcherServlet -- GET "/get-bike", parameters={} 
+12:59:17.671 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestMappingHandlerMapping -- Mapped to com.ducat.springboot20.Controller.BikeController#getBikeController() 
+12:59:17.671 [http-nio-8080-exec-5] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Opening JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:59:17.673 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Found thread-bound EntityManager [SessionImpl(181094315<open>)] for JPA transaction 
+12:59:17.673 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Creating new transaction with name [org.springframework.data.jpa.repository.support.SimpleJpaRepository.findAll]: PROPAGATION_REQUIRED,ISOLATION_DEFAULT,readOnly 
+12:59:17.674 [http-nio-8080-exec-5] DEBUG o.s.j.datasource.DataSourceUtils -- Setting JDBC Connection [HikariProxyConnection@1338624150 wrapping com.mysql.cj.jdbc.ConnectionImpl@78d6c244] read-only 
+12:59:17.675 [http-nio-8080-exec-5] DEBUG o.h.e.t.internal.TransactionImpl -- On TransactionImpl creation, JpaCompliance#isJpaTransactionComplianceEnabled == false 
+12:59:17.675 [http-nio-8080-exec-5] DEBUG o.h.e.t.internal.TransactionImpl -- begin 
+12:59:17.680 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Exposing JPA transaction as JDBC [org.springframework.orm.jpa.vendor.HibernateJpaDialect$HibernateConnectionHandle@56856040] 
+12:59:17.683 [http-nio-8080-exec-5] DEBUG o.hibernate.orm.sql.ast.create -- Created new SQL alias : b1_0 
+12:59:17.684 [http-nio-8080-exec-5] DEBUG o.hibernate.orm.sql.ast.create -- Registration of TableGroup [StandardTableGroup(com.ducat.springboot20.Entity.Bike(2))] with identifierForTableGroup [com.ducat.springboot20.Entity.Bike] for NavigablePath [com.ducat.springboot20.Entity.Bike]  
+12:59:17.684 [http-nio-8080-exec-5] DEBUG o.hibernate.orm.sql.ast.create -- Registration of TableGroup [org.hibernate.sql.ast.tree.from.LazyTableGroup@4d438648] with identifierForTableGroup [com.ducat.springboot20.Entity.Bike(2).owner] for NavigablePath [com.ducat.springboot20.Entity.Bike(2).owner]  
+12:59:17.686 [http-nio-8080-exec-5] DEBUG o.h.orm.results.graph.AST -- DomainResult Graph:
+ \-EntityResultImpl [com.ducat.springboot20.Entity.Bike(2)]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(2).bikeModel]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(2).bikeName]
+ |  +-BasicFetch [com.ducat.springboot20.Entity.Bike(2).color]
+ |  +-EntityFetchSelectImpl [com.ducat.springboot20.Entity.Bike(2).owner]
+ |  \-BasicFetch [com.ducat.springboot20.Entity.Bike(2).price]
+ 
+12:59:17.687 [http-nio-8080-exec-5] DEBUG org.hibernate.orm.sql.ast.tree -- SQL AST Tree:
+    SelectStatement {
+      FromClause {
+        StandardTableGroup (b1 : com.ducat.springboot20.Entity.Bike(2)) {
+          primaryTableReference : bike as b1_0
+          TableGroupJoins {
+            left  join LazyTableGroup (o1 : com.ducat.springboot20.Entity.Bike(2).owner) {
+            }
+          }
+        }
+      }
+    }
+ 
+12:59:17.688 [http-nio-8080-exec-5] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = NORMAL 
+12:59:17.688 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL -- select b1_0.id,b1_0.bike_model,b1_0.bike_name,b1_0.color,b1_0.owner_id,b1_0.price from bike b1_0 
+12:59:17.690 [http-nio-8080-exec-5] DEBUG org.hibernate.orm.results -- Initializer list:
+	  com.ducat.springboot20.Entity.Bike(2) -> EntityJoinedFetchInitializer(com.ducat.springboot20.Entity.Bike(2))@531116043 (SingleTableEntityPersister(com.ducat.springboot20.Entity.Bike))
+	  com.ducat.springboot20.Entity.Bike(2).owner -> EntitySelectFetchInitializer(com.ducat.springboot20.Entity.Bike(2).owner)@1317569648 (ToOneAttributeMapping(NavigableRole[com.ducat.springboot20.Entity.Bike.owner])@961224997)
+ 
+12:59:17.691 [http-nio-8080-exec-5] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE 
+12:59:17.691 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL -- select o1_0.owner_id,o1_0.owner_name,o1_0.age from owner o1_0 where o1_0.owner_id=? 
+12:59:17.698 [http-nio-8080-exec-5] DEBUG org.hibernate.orm.sql.exec -- Skipping reading Query result cache data: cache-enabled = false, cache-mode = IGNORE 
+12:59:17.700 [http-nio-8080-exec-5] DEBUG org.hibernate.SQL -- select o1_0.owner_id,o1_0.owner_name,o1_0.age from owner o1_0 where o1_0.owner_id=? 
+12:59:17.720 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Initiating transaction commit 
+12:59:17.722 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Committing JPA transaction on EntityManager [SessionImpl(181094315<open>)] 
+12:59:17.722 [http-nio-8080-exec-5] DEBUG o.h.e.t.internal.TransactionImpl -- committing 
+12:59:17.724 [http-nio-8080-exec-5] DEBUG o.s.j.datasource.DataSourceUtils -- Resetting read-only flag of JDBC Connection [HikariProxyConnection@1338624150 wrapping com.mysql.cj.jdbc.ConnectionImpl@78d6c244] 
+12:59:17.728 [http-nio-8080-exec-5] DEBUG o.s.o.jpa.JpaTransactionManager -- Not closing pre-bound JPA EntityManager after transaction 
+12:59:17.730 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Using 'application/json', given [*/*] and supported [application/json, application/*+json] 
+12:59:17.731 [http-nio-8080-exec-5] DEBUG o.s.w.s.m.m.a.RequestResponseBodyMethodProcessor -- Writing [[com.ducat.springboot20.Entity.Bike@9c9be09, com.ducat.springboot20.Entity.Bike@59797556, com.ducat. (truncated)...] 
+12:59:17.733 [http-nio-8080-exec-5] DEBUG o.s.o.j.s.OpenEntityManagerInViewInterceptor -- Closing JPA EntityManager in OpenEntityManagerInViewInterceptor 
+12:59:17.741 [http-nio-8080-exec-5] DEBUG o.s.w.servlet.DispatcherServlet -- Completed 200 OK 
+12:59:34.419 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Pool stats (total=10/10, idle=10/10, active=0, waiting=0) 
+12:59:34.419 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - Fill pool skipped, pool has sufficient level or currently being filled. 
+12:59:36.587 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@60bc3129 is alive 
+12:59:40.789 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@4cb0d72 is alive 
+12:59:44.539 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@1bd49c1a is alive 
+12:59:47.129 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@33a7dee1 is alive 
+12:59:49.839 [HikariPool-1:housekeeper] DEBUG c.zaxxer.hikari.pool.HikariPool -- HikariPool-1 - keepalive: connection com.mysql.cj.jdbc.ConnectionImpl@538821ae is alive 
