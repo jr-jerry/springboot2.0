@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.ducat.springboot20.Entity.Bike;
 import com.ducat.springboot20.Entity.Owner;
+import com.ducat.springboot20.Exception.DataNotFoundException;
 import com.ducat.springboot20.Repository.BikeRepository;
 import com.ducat.springboot20.Repository.OwnerRepository;
 
@@ -20,10 +21,12 @@ public class BikeService {
     private final OwnerRepository ownerRepository;
 
     public BikeDTO getBikeByName(String bikeName){
-       Bike savedBike= bikeRepository.findByBikeName(bikeName);
-
-       return getDtoFromBike(savedBike);
-   
+       Optional<Bike> box= bikeRepository.findByBikeName(bikeName); 
+       if(box.isPresent()){
+            Bike savedBikeInDb=box.get();
+             return getDtoFromBike(savedBikeInDb);
+       }      
+       throw new DataNotFoundException("No Data found with "+bikeName+" given bike name");
     }
     public BikeService(BikeRepository bikeRepository, OwnerRepository ownerRepository) {
         this.bikeRepository = bikeRepository;
@@ -74,11 +77,17 @@ public class BikeService {
     public static Bike getBikeFromDto(BikeDTO bikeDTO){
 
         Bike obj=new Bike();
-        obj.setBikeModel(bikeDTO.getBikeModel());
+        if(     bikeDTO.getBikeModel()!=null 
+            || bikeDTO.getBikeModel().isEmpty() 
+            || bikeDTO.getBikeModel().trim()!=""){
+                obj.setBikeModel(bikeDTO.getBikeModel());
+            }
+            
         obj.setBikeName(bikeDTO.getBikeName());
         obj.setPrice(bikeDTO.getPrice());
         obj.setColor(bikeDTO.getColor());
         return obj;
+        
         
     }
     public static BikeDTO getDtoFromBike(Bike bike){

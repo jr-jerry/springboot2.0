@@ -2,7 +2,9 @@ package com.ducat.springboot20.Controller;
 
  import com.ducat.springboot20.dto.BikeDTO;
  import lombok.extern.slf4j.Slf4j;
- import org.springframework.web.bind.annotation.DeleteMapping;
+
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -11,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestBody;
  import org.springframework.web.bind.annotation.RestController;
 
 import com.ducat.springboot20.Entity.Bike;
+import com.ducat.springboot20.Exception.DataNotFoundException;
+import com.ducat.springboot20.Exception.InvalidBikeDataException;
 import com.ducat.springboot20.service.BikeService;
 import java.util.*;
 @Slf4j
@@ -45,8 +49,11 @@ public class BikeController {
     public BikeDTO getBikeByNameController(@PathVariable String bikeName){
         return service.getBikeByName(bikeName);
     }
-
-
+    @ExceptionHandler(value=DataNotFoundException.class)
+    public void BikeNotFoundException(DataNotFoundException e){
+        e.printStackTrace();
+    }
+    
     
     @GetMapping("/get-bike")
     public List<Bike> getBikeController(){
